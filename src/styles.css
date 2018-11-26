@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+#root-container {
+  margin-top: 30px;
+}
+
+#add-event-button {
+  margin-top: 20px;
+}
+
+#back-to-events-button {
+  margin-top: 20px;
+}

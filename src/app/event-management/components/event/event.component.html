@@ -1,0 +1,37 @@
+<div class="ui container" id='root-container'>
+  <h1>Event Management System</h1>
+  <h2>Event {{ eventId + 1 }}</h2>
+
+  <div *ngIf='event.errorMessage'>
+    <div class="ui error message">
+      {{event.errorMessage}}
+    </div>
+  </div>
+  <div *ngIf='!event.errorMessage'>
+    <table class="ui table">
+      <tbody>
+        <tr>
+          <td>
+            <b>Name</b>
+          </td>
+          <td>{{event.name}}</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Date</b>
+          </td>
+          <td>{{event.date}}</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Duration</b>
+          </td>
+          <td>{{event.duration}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="ui blue button" id='back-to-events-button' routerLink='/events'>
+    Back to Events
+  </button>
+</div>

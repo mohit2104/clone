@@ -1,0 +1,35 @@
+<div class="ui container" id='root-container'>
+  <h1>Event Management System</h1>
+  <h2>Events</h2>
+
+  <div *ngIf='!events || !events.length'>
+    <div class="ui warning message">
+      <p>No events found</p>
+    </div>
+  </div>
+
+  <div *ngIf='events && events.length'>
+    <table class="ui striped table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let event of events; let eventIndex = index' [routerLink]="'/events/' + eventIndex">
+          <td>{{ eventIndex + 1}}</td>
+          <td>{{ event.name }}</td>
+          <td>{{ event.date }}</td>
+          <td>{{ event.duration }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="ui blue button" id='add-event-button' routerLink='/events/add'>
+    Add Event
+  </button>
+</div>
